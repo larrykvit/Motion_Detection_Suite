@@ -1,0 +1,5 @@
+images\set_1obj\
+imagesM\set_1objM\
+image
+0
+5
