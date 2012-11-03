@@ -11,7 +11,7 @@ Motion Detection suite
 To run the program run:
 Run "Motion detection.exe"
 
-It will readed input.txt for image location and info and parameters.txt for the motion detection parametes. It will also save info about the related targets to info.txt
+It will read input.txt for image location and info and parameters.txt for the motion detection parametes. It will also save info about the related targets to info.txt
 
 Use File_create.exe to edit / create / save the input files using a GUI
 

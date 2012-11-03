@@ -8,7 +8,7 @@ Set of functions used by the motion detection program
 #include "KM_functions.h"
 
 //colours for filling targets, colouring the target borders, and drawing the line fro related targets
-Colour fillIn = { 0, 0, 0 };
+Colour fillIn = { 255, 0, 255 };
 Colour border = {255, 0, 255 };
 Colour line = {255, 255, 255};
 //this struct (white) was used for testing purposes
@@ -367,7 +367,11 @@ void colourImage( ImageAttr* attr_img, const vector< Target >& target, const int
 		for( int j = 0; j < target[i].targetPixelCount(); j++)
 		{
 			Point curPoint = target[i].pointAt( j );
-			fillColour( row_ptr_img, curPoint.x, curPoint.y, &fillIn );
+			Colour tempColour = { *( row_ptr_img[curPoint.y] + 3*curPoint.x + 0 ), *( row_ptr_img[curPoint.y] + 3*curPoint.x + 1 ), *( row_ptr_img[curPoint.y] + 3*curPoint.x + 2 ) };
+			tempColour.R = (tempColour.R + fillIn.R)/2;
+			tempColour.G = (tempColour.G + fillIn.G)/2;
+			tempColour.B = (tempColour.B + fillIn.B)/2;
+			fillColour( row_ptr_img, curPoint.x, curPoint.y, &tempColour );
 		}
 		
 		//boxes the targets

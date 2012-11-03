@@ -1,5 +1,5 @@
-images\set_1obj\
-imagesM\set_1objM\
+images\f1_1\
+imagesM\f1_1\
 image
 0
-5
+10
